@@ -29,5 +29,7 @@ export default new Router({
       path: '/search',
       component: search
     }
-  ]
+  ],
+  // 把router-link-active默认 覆盖成mui-active
+  linkActiveClass:'mui-active'
 })
