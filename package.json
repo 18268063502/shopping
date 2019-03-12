@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "mint-ui": "^2.2.13",
+    "moment": "^2.24.0",
     "vue": "^2.5.11",
     "vue-router": "^3.0.2"
   },

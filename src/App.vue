@@ -65,6 +65,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding-top: 40px;
+  padding-bottom: 50px;
   overflow-x: hidden
 }
 .v-enter{
