@@ -6,21 +6,27 @@
           <span>发表次数:{{xiangqing.click}}</span>
         </p>
         <div class="new_contenter" v-html="xiangqing.content"></div>
+        <comments :newsId="this.id" />
     </div>
 </template>
 
 <script>
+import comments from '../../components/subCompents/comment'
 export default {
   components:{},
   props:{},
   data(){
     return {
       id:23,
-      xiangqing:[]
+      xiangqing:[],
+      props:['newsId']
     }
   },
   watch:{},
   computed:{},
+  components:{
+    comments
+  },
   methods:{
 
     getNewsxaingiqng(){

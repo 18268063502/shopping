@@ -12,9 +12,10 @@ import moment from 'moment'
 // 按需导入mint ui组件
 import{Header} from 'mint-ui'
 Vue.component(Header.name,Header)
-import { Swipe, SwipeItem } from 'mint-ui';
+import { Swipe, SwipeItem,Button  } from 'mint-ui';
 
 Vue.component(Swipe.name, Swipe);
+Vue.component(Button.name, Button);
 Vue.component(SwipeItem.name, SwipeItem);
 
 // 全局过滤器
