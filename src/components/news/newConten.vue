@@ -1,12 +1,12 @@
 <template>
     <div>
-        <h3>新闻资讯--因为接口不全模拟</h3>
+      <p>{{this.itemid}}</p>
         <p>
-          <span>发表时间:{{xiangqing.add_time | dataTimeFormat}}</span>
+          <span>发表时间:{{xiangqing.time | dataTimeFormat}}</span>
           <span>发表次数:{{xiangqing.click}}</span>
         </p>
         <div class="new_contenter" v-html="xiangqing.content"></div>
-        <comments :newsId="this.id" />
+        <comments :newsId="this.itemid" />
     </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
   props:{},
   data(){
     return {
-      id:23,
+      itemid:this.$route.params.id,
       xiangqing:[],
       props:['newsId']
     }
@@ -30,10 +30,10 @@ export default {
   methods:{
 
     getNewsxaingiqng(){
-      this.axios.get('http://www.liulongbin.top:3005/api/getnew/'+this.id)
+      this.axios.get('http://test/mock.com/'+this.itemid)
       .then((data)=>{
-        this.xiangqing=data.data.message[0]
-        console.log(this.xiangqing)
+        this.xiangqing=data.data.list
+        console.log(data)
       })
      
     }

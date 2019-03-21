@@ -17,7 +17,6 @@ import { Swipe, SwipeItem,Button  } from 'mint-ui';
 Vue.component(Swipe.name, Swipe);
 Vue.component(Button.name, Button);
 Vue.component(SwipeItem.name, SwipeItem);
-
 // 全局过滤器
 Vue.filter('dataTimeFormat',(dataStr,GeShi="YYYY-MM-DD hh:mm:ss")=>{
   return moment(dataStr).format(GeShi)
@@ -25,6 +24,7 @@ Vue.filter('dataTimeFormat',(dataStr,GeShi="YYYY-MM-DD hh:mm:ss")=>{
 // icon
 import './css/icon.css'
 
+import "./utils/mock.js";
 
 
 // mui

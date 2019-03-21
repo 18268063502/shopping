@@ -2,13 +2,13 @@
     <div>
         <ul class="mui-table-view">
 
-				<li v-for="item in newList" :key="item.id" class="mui-table-view-cell mui-media">
-					<router-link :to="'/news/newConten/' + item.id">
+				<li v-for="item in newList" :key="item.itemid" class="mui-table-view-cell mui-media">
+					<router-link :to="'/news/newConten/' + item.itemid">
 						<img class="mui-media-object mui-pull-left" :src="item.img">
 						<div class="mui-media-body">
 							<h5>{{item.title}}</h5>
 							<p class='mui-ellipsis'>
-                  <span>发表时间：{{item.content | dataTimeFormat("YYYY-HH-DD")}}</span>
+                  <span>发表时间：{{item.time | dataTimeFormat("YYYY-HH-DD")}}</span>
                   <span>点击次数: {{item.click}}次</span>
               </p>
 						</div>
@@ -35,12 +35,13 @@ export default {
     //   获取新闻资讯列表
     getNew(){
        this.axios
-       .get('./static/json/news.json')
+       .get('http://test/mock.com')
        .then( response=> {
          
           if (response.status===200) {
-              this.newList=response.data.message
-              console.log(this.newList);
+            var data =response.data
+              this.newList=data.list
+              console.log(this.newList)
           }
        })
        .catch(error=> {

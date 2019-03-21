@@ -1,6 +1,6 @@
 <template>
     <div>
-       会员
+       {{this.obj}}
     </div>
 </template>
 
@@ -10,13 +10,26 @@ export default {
   props:{},
   data(){
     return {
+      obj:[]
     }
   },
-  watch:{},
-  computed:{},
-  methods:{},
-  created(){},
-  mounted(){}
+   mounted() {
+    this.getconsole() 
+  },
+  methods:{
+    getconsole(){
+      this.axios
+        .get("/api/xinghao")
+        .then(result => {
+            this.obj=result.data
+            console.log(result);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  },
+ 
 }
 </script>
 
